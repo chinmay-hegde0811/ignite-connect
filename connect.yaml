@@ -1,0 +1,96 @@
+deployAs:
+  - name: enabler
+    applicationType: assets
+  - name: web
+    applicationType: service
+    endpoint: /web
+    scripts:
+      postDeploy: npm run connector:post-deploy
+      preUndeploy: npm run update-web-modules
+    configuration:
+      standardConfiguration:
+        - key: CTP_PROJECT_KEY
+          description: commercetools project key
+          required: true
+          value: "tryzens-ignite-dev"
+        - key: CTP_AUTH_URL
+          description: commercetools Auth URL
+          required: true
+          default: https://auth.europe-west1.gcp.commercetools.com
+          value: "https://auth.europe-west1.gcp.commercetools.com"
+        - key: CTP_API_URL
+          description: commercetools API URL
+          required: true
+          default: https://api.europe-west1.gcp.commercetools.com
+          value: "https://api.europe-west1.gcp.commercetools.com"
+        - key: CTP_SESSION_URL
+          description: Session API URL
+          required: true
+          default: https://session.europe-west1.gcp.commercetools.com
+          value: "https://session.europe-west1.gcp.commercetools.com"
+        - key: CTP_CLIENT_ID
+          description: commercetools client ID
+          required: true
+          value: "YugtWXMXSKomsEgTNqJRzI8I"
+        - key: CTP_JWKS_URL
+          description: JWKs URL
+          required: true
+          default: https://mc-api.europe-west1.gcp.commercetools.com/.well-known/jwks.json
+          value: "https://mc-api.europe-west1.gcp.commercetools.com/.well-known/jwks.json"
+        - key: CTP_JWT_ISSUER
+          description: JWT Issuer for JWT validation
+          required: true
+          default: https://mc-api.europe-west1.gcp.commercetools.com
+          value: "https://mc-api.europe-west1.gcp.commercetools.com"
+      securedConfiguration:
+        - key: CTP_CLIENT_SECRET
+          description: commercetools client secret
+          required: true
+          value: "h1alZP-tSiQ5FZorgWtlM2wAIgoVE7m5"
+  - name: cron
+    applicationType: job
+    endpoint: /cron
+    scripts:
+      postDeploy: npm run connector:post-deploy
+      preUndeploy: npm run update-cron-modules
+    properties:
+      schedule: '*/5 * * * *'
+    configuration:
+      standardConfiguration:
+        - key: CTP_PROJECT_KEY
+          description: Project key of the Composable Commerce Project
+          required: true
+          default: 'tryzens-ignite-dev'
+          value: "tryzens-ignite-dev"
+        - key: CTP_REGION
+          description: Region where the Composable Commerce Project is hosted
+          required: true
+          value: "europe-west1.gcp"
+      securedConfiguration:
+        - key: CTP_CLIENT_ID
+          description: client_id of an API Client for the Composable Commerce Project
+          required: true
+          value: "YugtWXMXSKomsEgTNqJRzI8I"
+        - key: CTP_CLIENT_SECRET
+          description: secret of an API Client for the Composable Commerce Project
+          required: true
+          value: "h1alZP-tSiQ5FZorgWtlM2wAIgoVE7m5"
+        - key: CTP_SCOPE
+          description: scope of an API Client for the Composable Commerce Project
+          value: "manage_project:tryzens-ignite-dev"
+  - name: mc
+    applicationType: merchant-center-custom-application
+    configuration:
+      standardConfiguration:
+        - key: CUSTOM_APPLICATION_ID
+          description: The Custom Application ID
+          required: true
+          value: "TODO"
+        - key: CLOUD_IDENTIFIER
+          description: The cloud identifier
+          default: 'gcp-eu'
+          value: "gcp-eu"
+        - key: ENTRY_POINT_URI_PATH
+          description: The Application entry point URI path
+          required: true
+          value: "ignite-dev"
