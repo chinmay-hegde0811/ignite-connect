@@ -4,8 +4,15 @@
   "description": "Cron job for the PSP Integration",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "tsx watch src/index.connect.ts",
-    "start": "node dist/index.connect.js"
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "lint": "eslint src/**/*.ts",
+    "lint-fix": "eslint --fix src/**/*.ts",
+    "pretty": "prettier --write 'src/**/*.ts'",
+    "precommit": "npm run lint-fix && npm run pretty",
+    "prepush": "npm run lint"
   },
   "keywords": [],
   "author": "",
