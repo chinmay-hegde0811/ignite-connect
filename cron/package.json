@@ -4,19 +4,8 @@
   "description": "Cron job for the PSP Integration",
   "main": "dist/index.js",
   "scripts": {
-    "build": "npm run prisma:generate && npm run prisma:push && npm run workspace:build-all && tsc",
-    "typecheck": "tsc --noEmit",
     "dev": "tsx watch src/index.connect.ts",
-    "start": "node dist/index.connect.js",
-    "lint": "eslint src/**/*.ts",
-    "lint-fix": "eslint --fix src/**/*.ts",
-    "pretty": "prettier --write 'src/**/*.ts'",
-    "precommit": "npm run lint-fix && npm run pretty",
-    "prepush": "npm run lint",
-    "gcp-build": "npm run prisma:generate && npm run prisma:push && npm run workspace:build-all && tsc",
-    "prisma:generate": "npm run -workspace db prisma:generate",
-    "prisma:push": "npm run -workspace db prisma:push",
-    "workspace:build-all": "npm run -workspaces build"
+    "start": "node dist/index.connect.js"
   },
   "keywords": [],
   "author": "",
@@ -53,13 +42,5 @@
     "restrictedFiles": [
       "custom-factory.ts"
     ]
-  },
-  "workspaces": [
-    "do",
-    "util",
-    "ct",
-    "psp",
-    "db",
-    "app"
-  ]
+  }
 }
