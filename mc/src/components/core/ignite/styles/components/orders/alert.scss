@@ -1,0 +1,9 @@
+.alert {
+    &.alert-yellow {
+        background-color: #FFF7E6;
+        color: #B45309;
+        padding: 6px 10px;
+        border-radius: 4px;
+        text-align: center;
+    }
+}

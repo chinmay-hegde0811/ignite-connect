@@ -1,0 +1,34 @@
+{
+    "paymentConfiguration": {
+        "projectSettings": {
+            "enabled": true,
+            "account": {
+                "environment": "live",
+                "live": {
+                    "apiKey": "live API Key",
+                    "apiSecret": "live secret",
+                    "webhookUrl": "live webhook url"
+                },
+                "test": {
+                    "apiKey": "test API Key",
+                    "apiSecret": "test secret",
+                    "webhookUrl": "test webhook url"
+                }
+            }
+        },
+        "paymentMethods": {
+            "onsite": {
+                "enabled": false,
+                "title": "Card Payment",
+                "buttonTitle": "Mastercard, Visa, Amex",
+                "action": "Direct sale"
+            },
+            "offsite": {
+                "enabled": true,
+                "title": "Pay Online",
+                "buttonTitle": "Pay Online",
+                "action": "Authorization only"
+            }
+        }
+    }
+}

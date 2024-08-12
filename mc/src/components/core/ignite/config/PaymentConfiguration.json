@@ -1,0 +1,345 @@
+{
+    "component": "ConfigurationGroup",
+    "key": "paymentConfiguration",
+    "dataFields": {
+        "show": true,
+        "children": [
+            {
+                "component": "ConfigurationGroup",
+                "key": "projectSettings",
+                "dataFields": {
+                    "show": true,
+                    "children": [
+                        {
+                            "component": "Toggle",
+                            "key": "enabled",
+                            "dataFields": {
+                                "show": true,
+                                "label": "Enabled"
+                            }
+                        },
+                        {
+                            "component": "Account",
+                            "key": "account",
+                            "dataFields": {
+                                "show": true,
+                                "children": [
+                                    {
+                                        "component": "Select",
+                                        "key": "environment",
+                                        "dataFields": {
+                                            "show": true,
+                                            "label": "Environment",
+                                            "options": [
+                                                { "value": "test", "label": "Test Mode" },
+                                                { "value": "live", "label": "Live Mode" }
+                                            ]
+                                        }  
+                                    },
+                                    {
+                                        "component": "ConfigurationGroup",
+                                        "key": "live",
+                                        "dataFields": {
+                                            "show": false,
+                                            "children": [
+                                                {
+                                                    "component": "Text",
+                                                    "key": "apiKey",
+                                                    "dataFields": {
+                                                        "show": true,
+                                                        "label": "Live API Key",
+                                                        "placeholder": "",
+                                                        "validation": {
+                                                            "required": true
+                                                        },
+                                                        "helperText": "Enter the live API Key"
+                                                    }
+                                                },
+                                                {
+                                                    "component": "Text",
+                                                    "key": "apiSecret",
+                                                    "dataFields": {
+                                                        "show": true,
+                                                        "label": "Live API Secret",
+                                                        "placeholder": "",
+                                                        "validation": {
+                                                            "required": true
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "component": "Text",
+                                                    "key": "webhookUrl",
+                                                    "dataFields": {
+                                                        "show": true,
+                                                        "label": "Live Webhook URL",
+                                                        "placeholder": "",
+                                                        "validation": {
+                                                            "required": true
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }                                            
+                                    },
+                                    {
+                                        "component": "ConfigurationGroup",
+                                        "key": "test", 
+                                        "dataFields": {
+                                            "show": true,
+                                            "children": [
+                                                {
+                                                    "component": "Text",
+                                                    "key": "apiKey",
+                                                    "dataFields": {
+                                                        "show": true,
+                                                        "label": "Test API Key",
+                                                        "placeholder": "",
+                                                        "validation": {
+                                                            "required": true
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "component": "Text",
+                                                    "key": "apiSecret",
+                                                    "dataFields": {
+                                                        "show": true,
+                                                        "label": "Test API Secret",
+                                                        "placeholder": "",
+                                                        "type": "passwordPasswordInput",
+                                                        "validation": {
+                                                            "required": true
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "component": "Text",
+                                                    "key": "webhookUrl",
+                                                    "dataFields": {
+                                                        "show": true,
+                                                        "label": "Test Webhook URL",
+                                                        "placeholder": "",
+                                                        "validation": {
+                                                            "required": true
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+                
+            },
+            {
+                "component": "CollapsibleGroup",
+                "key": "paymentMethods",
+                "dataFields": {
+                    "show": true,
+                    "children": [
+                        {
+                            "key": "onsite",
+                            "component": "ConfigurationGroup",
+                            "collapseTitle": "Onsite Payments",
+                            "index": 0,
+                            "dataFields": {
+                                "show": true,
+                                "children": [
+                                    {
+                                        "component": "Toggle",
+                                        "key": "enabled",
+                                        "dataFields": {
+                                            "show": true,
+                                            "label": "Enabled"
+                                        }
+                                    },
+                                    {
+                                        "component": "Text",
+                                        "key": "title",
+                                        "dataFields": {
+                                            "show": true,
+                                            "label": "Title",
+                                            "placeholder": "Card Payment",
+                                            "validation": {
+                                                "required": true
+                                            }
+                                        }                            
+                                    },
+                                    {
+                                        "component": "Text",
+                                        "key": "buttonTitle",
+                                        "dataFields": {
+                                            "show": true,
+                                            "label": "Pay Button Title",
+                                            "placeholder": "Mastercard, Visa, Amex",
+                                            "validation": {
+                                                "required": true
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "component": "Radio",
+                                        "key": "action",
+                                        "dataFields": {
+                                            "show": true,
+                                            "label": "Payment Action",
+                                            "options": [
+                                                "Direct sale",
+                                                "Authorization only"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "key": "offsite",
+                            "component": "ConfigurationGroup",
+                            "collapseTitle": "Offsite Payments",
+                            "index": 1,
+                            "dataFields": {
+                                "show": true,
+                                "children": [
+                                    {
+                                        "component": "Toggle",
+                                        "key": "enabled",
+                                        "dataFields": {
+                                            "show": true,
+                                            "label": "Enabled"
+                                        }
+                                    },
+                                    {
+                                        "component": "Text",
+                                        "key": "title",
+                                        "dataFields": {
+                                            "show": true,
+                                            "label": "Title",
+                                            "placeholder": "Pay Online",
+                                            "validation": {
+                                                "required": true
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "component": "Text",
+                                        "key": "buttonTitle",
+                                        "dataFields": {
+                                            "show": true,
+                                            "label": "Pay Button Title",
+                                            "placeholder": "Pay Online",
+                                            "validation": {
+                                                "required": true
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "component": "Radio",
+                                        "key": "action",
+                                        "dataFields": {
+                                            "show": true,
+                                            "label": "Payment Action",
+                                            "options": [
+                                                "Direct sale",
+                                                "Authorization only"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "key": "googlePay",
+                            "component": "ConfigurationGroup",
+                            "collapseTitle": "Google pay",
+                            "index": 3,
+                            "dataFields": {
+                                "show": true,
+                                "children": [
+                                    {
+                                        "component": "Toggle",
+                                        "key": "enabled",
+                                        "dataFields": {
+                                            "show": true,
+                                            "label": "Enabled"
+                                        }
+                                    },
+                                    {
+                                        "component": "Text",
+                                        "key": "title",
+                                        "dataFields": {
+                                            "show": true,
+                                            "label": "Title",
+                                            "validation": {
+                                                "required": true
+                                            }
+                                        }                            
+                                    },
+                                    {
+                                        "component": "Radio",
+                                        "key": "action",
+                                        "dataFields": {
+                                            "show": true,
+                                            "label": "Payment Action",
+                                            "options": [
+                                                "Direct sale",
+                                                "Authorization only"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "key": "applePay",
+                            "component": "ConfigurationGroup",
+                            "collapseTitle": "Apple pay",
+                            "index": 4,
+                            "dataFields": {
+                                "show": true,
+                                "children": [
+                                    {
+                                        "component": "Toggle",
+                                        "key": "enabled",
+                                        "dataFields": {
+                                            "show": true,
+                                            "label": "Enabled"
+                                        }
+                                    },
+                                    {
+                                        "component": "Text",
+                                        "key": "title",
+                                        "dataFields": {
+                                            "show": true,
+                                            "label": "Title",
+                                            "validation": {
+                                                "required": true
+                                            }
+                                        }                            
+                                    },
+                                    {
+                                        "component": "Radio",
+                                        "key": "action",
+                                        "dataFields": {
+                                            "show": true,
+                                            "label": "Payment Action",
+                                            "options": [
+                                                "Direct sale",
+                                                "Authorization only"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+                
+            }
+        ]
+    }
+    
+}

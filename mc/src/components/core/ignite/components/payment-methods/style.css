@@ -1,0 +1,295 @@
+.payment-options .pay-option {
+    width: 170px;
+    text-align: center;
+    margin: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    position: relative;
+}
+
+.payment-options {
+    display: flex;
+    flex-flow: wrap;
+}
+
+.payment-section-wrapper {
+    padding: 2rem;   
+}
+
+.payments-section-wrapper {
+    margin-top: 1rem;
+}
+
+.MuiAccordion-root {
+    border-bottom: 3px solid #45BEAA;
+    padding: 0px;
+    margin-bottom: 0.5rem;
+}
+
+.MuiCollapse-root {
+    border-top: 3px solid #45BEAA;
+}
+
+.accordion-header label {
+    top: 0px;
+    right: 4rem;
+}
+
+.relative {
+    position: relative
+}
+
+.flex {
+    display: flex;
+}
+.relative label {
+    position: absolute;
+}
+
+.float-right {
+    position: absolute;
+    top: 0rem;
+    right: 0px;
+    display: flex;
+}
+
+.float-right label {
+    position: relative;
+}
+
+.accordion-details {
+    padding: 2rem !important;
+}
+
+.section-header{
+font-size: medium;
+}
+
+.section-title {
+padding-top: 5px;
+}
+
+.section-header,.section-input {
+    margin: 6px 0;
+}
+
+.section-header {
+    display: flex;
+} 
+
+.section-header span {
+    margin-top: 4px;
+}
+
+.section-wrapper {
+    width: 50%;
+}
+
+.sub-title {
+    font-size: 13px;
+    color: #9F9F9F;
+    margin-bottom: 13px;
+}
+.bold-text {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.payment-options-wrapper {
+    padding: 2rem 4rem;
+    background-color: #F6F6F8;
+    border-radius: 15px;
+}
+
+.save-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.save-wrapper button {
+    background-color: #45BEAA;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    color: #FFF;
+    border-radius: 6px;
+    height: 3rem;
+}
+
+.dropdown-container {
+    margin: 1rem 0rem 0rem 1rem;
+}
+
+.colorpicker-title {
+    margin: 4px 0rem 0rem 2rem;
+}
+
+.algin-end {
+    justify-content: end;
+}
+
+.algin-even {
+    justify-content: space-evenly;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.select-dropdown {
+    background-color: #FFF;
+    height: 40px;
+}
+
+.select-dropdown.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #45BEAA !important;
+}
+
+label:focus-within::after {
+    outline: none !important;
+}
+
+.options-section div {
+    outline: none !important;
+}
+
+.snack-bar{
+    margin-top: 4rem;
+}
+
+.refresh-btn {
+    position: relative;
+}
+
+.refresh-btn span {
+    position: absolute;
+    top: -2px;
+}
+
+.group-cards-title {
+    margin-top: 4px;
+}
+
+/* Payment Modal */
+.payment-modal-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 1rem 0px;
+    flex-wrap: wrap;
+}
+
+.hidden-input {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    white-space: nowrap;
+    width: 1
+}
+
+.upload-btn {
+    background-color: #45BEAA;
+    margin: auto;
+}
+
+.logo-img{
+    max-width: 240px;
+}
+
+.logo-placeholder {
+    opacity: 0.2;
+    font-size: 8rem;
+}
+
+.save-btn {
+    background-color: #45BEAA;
+}
+
+.cancel-btn {
+    background-color: #9F9F9F;
+}
+
+.image-container{
+    justify-content: space-between;
+    display: flex;
+}
+
+.logo-upload{
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-actions {
+    justify-content: space-around;
+    display: flex;
+}
+
+.payment-option-fields {
+    width: 50%;
+}
+
+#delete-modal-title {
+    margin-bottom: 2rem;
+}
+
+/* Payment Card */
+.payment-options-card {
+    border-radius: 15px;
+}
+
+.payment-list-img {
+    max-width: 80px;
+}
+
+.payment-title{
+    margin: 15px 0px;
+}
+
+.settings-payment{
+    cursor: pointer;
+}
+
+.popup-modal {
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #000;
+    background-color: #fff;
+    padding: 40px;
+}
+
+.payment-logo-modal {
+    width:60%;
+}
+
+.delete-modal {
+    width:40%;
+}
+
+.close-button {
+    float: right;
+    cursor: pointer;
+}
+
+.logo-section-wrapper {
+    margin-bottom: 2rem;
+}
+
+.field-wrapper{
+    justify-content: space-around;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,16 @@
+.config-tabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: $white;
+    font-family: 'averta-regular';
+    font-size: 16px;
+    display: flex;
+    li {
+        background: $grey-800;
+        padding: 12px 24px;
+        &.active {
+            border-bottom: 4px solid $primary;
+        }
+    }
+}

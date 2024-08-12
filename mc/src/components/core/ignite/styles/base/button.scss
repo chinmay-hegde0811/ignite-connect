@@ -1,0 +1,14 @@
+@mixin primary-button {
+    background: $primary;
+    color: $white;
+    width: 100%;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    &:hover {
+        background: $primary;
+    }
+    &:focus {
+        background: $primary;
+    }
+}

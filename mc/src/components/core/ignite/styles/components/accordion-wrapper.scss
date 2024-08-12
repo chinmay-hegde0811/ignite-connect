@@ -1,0 +1,41 @@
+.accordion-wrapper {
+    background: $grey-200;
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    .Mui-expanded {
+        margin: 0 !important;
+    }
+    &.Mui-expanded{
+        margin: 0;
+    }
+    &::before {
+        display: none;
+    }
+    .MuiButtonBase-root {
+        background: $grey-200;
+        border-radius: 4px !important;
+        box-shadow: none;
+        min-height: 44px;
+        color: $primary;
+        font-family: "averta-regular";
+        font-weight: 600;
+        font-size: 16px;
+        &.Mui-expanded {
+            min-height: 44px;
+        }
+    }
+    .MuiCollapse-root {
+        background: $grey-200;
+        border-radius: 4px !important;
+        box-shadow: none;
+        margin-top: 1px;
+    }
+    .MuiAccordionDetails-root {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}

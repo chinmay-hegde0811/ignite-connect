@@ -1,0 +1,114 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-1.1.x", "debian-openssl-3.0.x", "linux-musl", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Status {
+  INITIAL // on create
+  REDIRECTED
+  AUTHORIZATION_REQUESTED
+  AUTHORIZED
+  CAPTURE_REQUESTED
+  CAPTURED
+  PARTIAL_CAPTURED
+  REFUND_REQUESTED
+  REFUNDED
+  PARTIAL_REFUNDED
+  VOID
+  FAILED
+  IN_REVIEW
+  CANCELLED
+}
+
+enum States {
+  DEFAULT
+  PROCESSING
+}
+
+enum Modes {
+  auth_only
+  sale
+}
+
+enum PaymentOptions {
+  PSP_CREDITCARD
+  HOSTED_AND_APMS
+  REDIRECT_PSP
+}
+
+model payments {
+  id                   String         @id @default(uuid())
+  authMode             Modes
+  paymentOption        PaymentOptions
+  paymentId            String
+  hostedTokenizationId String?
+  pspId                String?
+  pspStatus            String?         @db.VarChar(255)
+  pspStatusCode        Int?
+  transactionId        String
+  token                String?
+  storeId              String         @db.VarChar(255)
+  cartId               String         @db.VarChar(255)
+  orderId              String         @db.VarChar(255)
+  orderCreatedAt       DateTime?
+  currency             String         @db.VarChar(255)
+  total                Int
+  status               Status         @default(INITIAL)
+  state                States         @default(DEFAULT)
+  storePermanently     Boolean        @default(false)
+  errors               String?        @db.Text
+  createdAt            DateTime       @default(now())
+  updatedAt            DateTime       @updatedAt
+}
+
+model payment_references {
+  id          String   @id @default(uuid())
+  storeId     String   @db.VarChar(255)
+  version     Int
+  referenceId Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique(storeId)
+}
+
+model customer_payment_tokens {
+  id         String   @id @default(uuid())
+  customerId String
+  paymentId  String
+  title      String
+  token      String   @db.VarChar(255)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model create_transaction_que {
+  id                Int      @id @default(autoincrement())
+  status            Int?
+  retry             Int?
+  error             Json?
+  data              Json?
+  transactionId     String?
+  transactionStatus String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+
+model cron_jobs {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  data        Json?
+  status      Int
+  lastRunAt   DateTime?
+
+  @@unique([name])
+}

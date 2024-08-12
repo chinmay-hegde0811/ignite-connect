@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "incremental": true,
+        "rootDir": "src",
+        "module": "CommonJS",
+        "target": "ES6",
+        "moduleResolution": "Node",
+        "declaration": true,
+        "declarationDir": "./dist/types",
+        "outDir": "./dist",
+        "esModuleInterop": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "traceResolution": false,
+        "listEmittedFiles": false,
+        "listFiles": false,
+        "pretty": true,
+        "lib": ["ES2022", "ES6"],
+        "paths": {
+            "~/*": ["./src/*"]
+          }
+    },
+    "include": [
+      "src/**/*.ts",
+      "node-bigcommerce.d.ts",
+      "commercetools__sdk-auth.d.ts"
+    ],
+    "exclude": ["node_modules/**"]
+  }

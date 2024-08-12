@@ -1,0 +1,10 @@
+.myaccount-form {
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 52px 0 52px 80px;
+}
+.myaccount-form button {
+    @include primary-button
+}

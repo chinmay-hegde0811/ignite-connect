@@ -1,0 +1,53 @@
+{
+  "name": "@ignite/ctintegration-db",
+  "version": "1.0.0",
+  "description": "Module containing data access",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "dev": "tsc -w -preserveWatchOutput",
+    "prisma": "prisma",
+    "prisma:generate": "prisma generate",
+    "prisma:push": "prisma db push",
+    "prisma:migrate": "prisma migrate deploy",
+    "lint": "eslint src/**/*.ts",
+    "lint-fix": "eslint --fix src/**/*.ts",
+    "pretty": "prettier --write 'src/**/*.ts'",
+    "precommit": "npm run lint-fix && npm run pretty",
+    "prepush": "npm run lint"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.5.0",
+    "@ignite/ctintegration-util": "^1.0.0",
+    "@ignite/ctintegration-do": "^1.0.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.7",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint": "^8.54.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.3",
+    "prettier": "^3.1.0",
+    "prisma": "^5.5.0",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "ignite": {
+    "restrictedFolders": [
+      "custom"
+    ],
+    "restrictedFiles": [
+      "custom-factory.ts"
+    ]
+  }
+}

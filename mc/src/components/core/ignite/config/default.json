@@ -1,0 +1,37 @@
+{
+    "paymentConfiguration": {
+        "projectSettings": {
+            "enabled": false,
+            "account": {
+                "environment": "test"
+            }
+        },
+        "paymentMethods": {
+            "onsite": {
+                "enabled": false,
+                "title": "Card Payment",
+                "buttonTitle": "Mastercard, Visa, Amex",
+                "action": "Direct sale"
+            },
+            "offsite": {
+                "enabled": false,
+                "title": "Pay Online",
+                "buttonTitle": "Pay Online",
+                "action": "Authorization only"
+            },
+            "googlePay": {
+                "enabled": false,
+                "title": "Google Pay",
+                "buttonTitle": "Google Pay",
+                "action": "Authorization only"
+            },
+            "applePay": {
+                "enabled": false,
+                "title": "Apple Pay",
+                "buttonTitle": "Apple Pay",
+                "action": "Authorization only"
+            }
+        },
+        "tokenize": true
+    }
+}

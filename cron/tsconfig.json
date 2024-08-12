@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "incremental": true,
+        "rootDir": "src",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "target": "ES2022",
+        "outDir": "./dist",
+        "esModuleInterop": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "traceResolution": false,
+        "listEmittedFiles": false,
+        "listFiles": false,
+        "pretty": true,
+        "lib": ["ES2022", "ES6"],
+        "paths": {
+            "~/*": ["./src/*"]
+          }
+    },
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": ["node_modules/**"]
+  }
